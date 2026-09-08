@@ -1,0 +1,368 @@
+:root {
+  --black: #0a0a09;
+  --charcoal: #141310;
+  --gold: #c9a24c;
+  --gold-light: #e7cd8b;
+  --gold-dim: #7c6531;
+  --hairline: #33301f;
+  --cream: #f1ead9;
+  --muted: #a89f8a;
+
+  --serif: 'Playfair Display', serif;
+  --sans: 'Jost', sans-serif;
+}
+
+/*  Base  */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  margin: 0;
+  color: var(--cream);
+}
+
+p {
+  margin: 0;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: 28px;
+}
+
+/* Section Heading */
+
+.section-head {
+  max-width: 60ch;
+  margin-bottom: 48px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.section-head p {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Tours */
+
+.tours {
+  padding-block: min(10vw, 100px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 4px;
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.price-table caption {
+  caption-side: top;
+  text-align: left;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.price-table thead th {
+  font-family: var(--sans);
+  font-weight: 500;
+  color: var(--black);
+  background: linear-gradient(
+    180deg,
+    var(--gold-light),
+    var(--gold)
+  );
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+.price-table thead th:first-child {
+  border-top-left-radius: 3px;
+}
+
+.price-table thead th:last-child {
+  border-top-right-radius: 3px;
+}
+
+.price-table thead th:not(:first-child) {
+  text-align: center;
+}
+
+.price-table tbody td {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--hairline);
+  color: #dcd4c1;
+}
+
+.price-table tbody td:not(:first-child) {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.price-table tbody td:first-child {
+  color: var(--cream);
+  font-weight: 500;
+}
+
+.price-table tbody tr:hover {
+  background: rgba(201, 162, 76, 0.05);
+}
+
+.price-table tbody tr.featured td:first-child {
+  color: var(--gold-light);
+}
+
+.price-table tbody tr.featured td:first-child::after {
+  content: 'Best value';
+  margin-left: 10px;
+  font-size: 0.68rem;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+.tours-note {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/*  Inclusions / Exclusions */
+
+.in-ex {
+  padding-block: min(10vw, 100px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.in-ex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.panel {
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  padding: 34px 32px;
+  background: var(--charcoal);
+}
+
+.panel.exclusions {
+  background: transparent;
+}
+
+.panel h3 {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 22px;
+  color: var(--gold-light);
+}
+
+.panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.panel li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: #d8d1bf;
+  font-size: 0.96rem;
+}
+
+.panel li svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.panel.inclusions li svg {
+  stroke: var(--gold);
+}
+
+.panel.exclusions li svg {
+  stroke: var(--muted);
+}
+
+.panel.exclusions li {
+  color: var(--muted);
+}
+
+/*  Perks  */
+
+.perks {
+  padding-block: min(10vw, 100px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.perk {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  border: 1px solid var(--gold-dim);
+  border-radius: 4px;
+  padding: 32px;
+  background: linear-gradient(
+    160deg,
+    rgba(201, 162, 76, 0.07),
+    transparent 60%
+  );
+}
+
+.perk .icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perk .icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--gold-light);
+}
+
+.perk h4 {
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+
+.perk p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* Responsive  */
+
+@media (max-width: 700px) {
+
+  .price-table thead {
+    display: none;
+  }
+
+  .price-table,
+  .price-table tbody,
+  .price-table tr,
+  .price-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table-scroll {
+    overflow-x: visible;
+    border: none;
+  }
+
+  .price-table tbody tr {
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    margin-bottom: 14px;
+    padding: 18px 20px;
+    background: var(--charcoal);
+  }
+
+  .price-table tbody td {
+    border: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price-table tbody td:not(:first-child)::before {
+    content: attr(data-pax);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+
+  .price-table tbody td:first-child {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-style: italic;
+    padding-bottom: 10px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--hairline);
+    display: block;
+  }
+
+  .price-table tbody tr.featured td:first-child::after {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .in-ex-grid,
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
